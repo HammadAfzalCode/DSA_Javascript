@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert in Arrays</title>
+  </head>
+  <body>
+    <script>
+      let data = [1, 20, 40, 44, 56, 7];
+      let newEl = 90;
+      //   let position = 2;
+      console.log(data, "uper");
+      //   for (let i = data.length - 1; i >= 0; i--) {
+      //     if (i >= position) {
+      //       data[i + 1] = data[i];
+      //       if (i == position) {
+      //         data[i] = newEl;
+      //       }
+      //     }
+      //   }
+
+      function insertEl() {
+        const position = document.getElementById("position").value;
+        const element = document.getElementById("element").value;
+        for (let i = data.length - 1; i >= 0; i--) {
+          if (i >= position) {
+            data[i + 1] = data[i];
+            if (i == position) {
+              data[i] = Number(element);
+            }
+          }
+        }
+        console.log(position, element, data, "neechy");
+      }
+    </script>
+    <input type="text" placeholder="enter position" id="position" />
+    <input type="text" placeholder="enter element" id="element" />
+    <button onclick="insertEl()">Insert</button>
+  </body>
+</html>
